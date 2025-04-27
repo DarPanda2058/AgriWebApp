@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.Optional;
 
@@ -65,6 +66,7 @@ public class CropRecommendationService {
         cropRecommendations.setSuitabilityScore2(Double.parseDouble(recommendations.get("suitabilityScore2")));
         cropRecommendations.setSuitabilityScore3(Double.parseDouble(recommendations.get("suitabilityScore3")));
 //        System.out.println(cropRecommendationRepository.existsByLandPlot(landPlot.get())+"7");
+        cropRecommendations.setRecommendationDate(LocalDate.now());
         cropRecommendationRepository.save(cropRecommendations);
         return ResponseEntity.status(201).body(CropMapper.mapToCropRecommendationDTO(cropRecommendations));
     }

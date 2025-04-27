@@ -24,13 +24,10 @@ public class CropRecommendationPredictionService {
                     .writeValueAsString(soilAndWeatherDataForPrediction);
             Process process = getRecommendationProcess(jsonInput);
 
-            System.out.println(jsonInput);
-            System.out.println(process);
 
             String output = new BufferedReader(new InputStreamReader(process.getInputStream()))
                     .readLine();
 
-            System.out.println(output);
 
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(output);

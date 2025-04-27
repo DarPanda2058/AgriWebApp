@@ -8,18 +8,6 @@ import java.util.List;
 
 public class LandDataMapper {
 
-    public static LandPlotDTO mapToLandPlotDTO(LandPlot landPlot){
-        LandPlotDTO landPlotDTO = new LandPlotDTO();
-        landPlotDTO.setPlot_id(landPlotDTO.getPlot_id());
-        landPlotDTO.setPlotName(landPlot.getPlotName());
-        landPlotDTO.setLatitude(landPlot.getLatitude());
-        landPlotDTO.setLongitude(landPlot.getLongitude());
-        landPlotDTO.setAddedDate(landPlot.getAddedDate());
-        landPlotDTO.setUser_id(landPlot.getUser().getUser_id());
-
-        return landPlotDTO;
-    }
-
     public static LandPlot mapToLandPlot(LandPlotDTO landPlotDTO, Users user){
         LandPlot landPlot = new LandPlot();
 

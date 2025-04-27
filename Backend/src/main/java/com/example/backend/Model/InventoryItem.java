@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -20,8 +22,8 @@ public class InventoryItem {
     private String unit;
     private String category;
 
-    @CreationTimestamp
-    private String updatedDate;
+    @UpdateTimestamp
+    private LocalDateTime updatedDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
