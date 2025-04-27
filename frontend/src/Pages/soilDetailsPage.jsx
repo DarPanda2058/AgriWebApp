@@ -262,9 +262,9 @@ function SoilDetailsPage() {
               <p className="font-medium">{soilData.palika}</p>
             </div>
             <div>
-              <p className="text-gray-600">Coordinates</p>
+              <p className="text-gray-600">Farm Name</p>
               <p className="font-medium">
-                {soilData.latitude.toFixed(4)}, {soilData.longitude.toFixed(4)}
+                {localStorage.getItem("plotName") || "Not Specified"}
               </p>
             </div>
             <div>

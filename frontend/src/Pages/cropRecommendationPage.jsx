@@ -161,7 +161,6 @@ function CropRecommendationPage() {
         })
 
         setCropDetails(cropDetailsMap)
-        console.log("Crop details:", cropDetailsMap)
         setError(null)
       } catch (err) {
         console.error("Error fetching crop data:", err)
@@ -293,8 +292,8 @@ function CropRecommendationPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-gray-500">Plot ID</p>
-                  <p className="font-medium">#{recommendations.landPlotId}</p>
+                  <p className="text-sm text-gray-500">Plot Name</p>
+                  <p className="font-medium">{localStorage.getItem("plotName")}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Recommendation Date</p>

@@ -142,6 +142,7 @@ function LandSelectionPage() {
       })
 
       localStorage.setItem("plotId", landResponse.data)
+      localStorage.setItem("plotName", farmName)
 
       // Second API call to predict soil
       const soilResponse = await apiClient.post(getBaseURL() + "/soil/predict", {
