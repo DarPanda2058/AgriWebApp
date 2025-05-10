@@ -23,6 +23,10 @@ model.fit(X_train, Y_train)
 
 Y_pred = model.predict(X_test)
 
+# Save the model to a .pkl file
+with open("RF_cropRecommendModel.pkl", "wb") as f:
+    pickle.dump(model, f)
+    
 # accuracy = model.score(X_test, Y_test)
 accuracy = accuracy_score(Y_test, Y_pred)
 
@@ -48,6 +52,3 @@ print("Unique labels saved to unique_labels.txt")
 
 
 
-# Save the model to a .pkl file
-with open("RF_cropRecommendModel.pkl", "wb") as f:
-    pickle.dump(model, f)
