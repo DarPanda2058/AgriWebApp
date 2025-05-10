@@ -21,17 +21,13 @@ public class SoilDetails {
     private double oc;
     private double zn;
     private double B;
-
     private String parentSoil;
     private String province;
     private String district;
     private String palika;
-
     private double latitude;
     private double longitude;
-
     private String fertilityStatus;
-
 
     @OneToOne
     @JoinColumn(name = "plot_id") // this is your FK

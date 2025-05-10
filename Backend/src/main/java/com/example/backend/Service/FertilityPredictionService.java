@@ -17,11 +17,7 @@ public class FertilityPredictionService {
             // Convert input map to valid JSON string
             String jsonInput = new ObjectMapper()
                     .writeValueAsString(soilDetailsForPrediction);
-
             Process process = getFertilityProcess(jsonInput);
-
-
-
             // Read script output
             String output = new BufferedReader(new InputStreamReader(process.getInputStream()))
                     .readLine();
@@ -58,9 +54,6 @@ public class FertilityPredictionService {
                 "src\\main\\resources\\RandomForest_Model\\fertilityPredict.py",
                 escapedJson
         );
-
-
-
         // Start the process
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.redirectErrorStream(true);

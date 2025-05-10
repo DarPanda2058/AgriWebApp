@@ -19,9 +19,7 @@ public class Users {
 
     private String first_name;
     private String last_name;
-
     private String email;
-
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

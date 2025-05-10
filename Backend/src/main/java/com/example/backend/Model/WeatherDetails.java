@@ -51,8 +51,6 @@ public class WeatherDetails {
     @Column(length = 3000)
     private String weatherAlerts;
 
-
-
     @OneToOne
     @JoinColumn(name = "plot_id") // this is your FK
     private LandPlot landPlot;

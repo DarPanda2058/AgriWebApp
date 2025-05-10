@@ -19,17 +19,12 @@ public class CropRecommendations {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long recommendationId;
 
-
-
-
     private String cropName1;
     private String cropName2;
     private String cropName3;
-
     private double suitabilityScore1;
     private double suitabilityScore2;
     private double suitabilityScore3;
-
 
     @OneToOne
     @JoinColumn(name = "plot_id")
