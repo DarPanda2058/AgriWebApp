@@ -10,9 +10,8 @@ function Navbar() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("userName");
+    
+    localStorage.clear();
     window.location.href = "/login"; // Redirect to login page after logout
   }
 

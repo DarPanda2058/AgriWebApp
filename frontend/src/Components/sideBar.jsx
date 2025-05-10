@@ -2,9 +2,7 @@ import { User, Package, History, LogOut, ChevronRight } from "lucide-react"
 
 function Sidebar({ userData, activePage = "profile" }) {
     const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("userId");
-        localStorage.removeItem("userName");
+        localStorage.clear(); // Clear local storage
         window.location.href = "/login"; // Redirect to login page after logout
       }
 return (
