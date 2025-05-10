@@ -11,6 +11,7 @@ import LandHistoryPage from '../Pages/landHistoryPage';
 import SoilDetailsPage from '../Pages/soilDetailsPage';
 import WeatherDetailsPage from '../Pages/weatherDetailsPage';
 import CropRecommendationPage from '../Pages/cropRecommendationPage';
+import ContactUsPage from '../Pages/contactpage';
 
 const AppRouter = () => {
     const isAuthenticated = localStorage.getItem("token");
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/contact" element={<ContactUsPage />} />
                 
                 {!isAuthenticated ? (
                 <>

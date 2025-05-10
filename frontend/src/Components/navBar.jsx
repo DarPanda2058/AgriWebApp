@@ -22,7 +22,7 @@ function Navbar() {
     <nav className="relative bg-white shadow-sm">
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="font-bold text-lg"><Link to="/">LOGO</Link></div>
+        <div className="font-bold text-lg"><Link to="/">AgriApp</Link></div>
 
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex space-x-8">

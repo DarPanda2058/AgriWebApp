@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react"
-import axios from "axios"
 import { Link } from "react-router-dom"
 import {
   Thermometer,
@@ -22,6 +21,8 @@ import {
   Info,
 } from "lucide-react"
 import Navbar from "../Components/navBar"
+import apiClient from "../Utils/apiClient"
+import Footer from "../Components/footer"
 
 // No Plot Selected component
 const NoPlotSelected = () => {
@@ -236,7 +237,7 @@ function WeatherDetailsPage() {
         }
 
         // Make API request with the plotId
-        const response = await axios.post("http://localhost:8080/api/weather/get", {
+        const response = await apiClient.post("http://localhost:8080/api/weather/get", {
           plot_id: plotId,
         })
 
@@ -522,6 +523,7 @@ function WeatherDetailsPage() {
           </>
         )}
       </main>
+      <Footer />
     </div>
   )
 }

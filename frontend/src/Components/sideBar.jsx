@@ -11,7 +11,7 @@ return (
     <div className="bg-white rounded-lg shadow-sm p-6">
         {/* User Profile Header */}
         <div className="flex items-center space-x-3 pb-6 border-b border-gray-100">
-            <img src={"/placeholder.svg"} alt="Profile" className="w-12 h-12 rounded-full" />
+            <img src={"/images/user.png"} alt="Profile" className="w-12 h-12 rounded-full" />
             <div>
                 <h3 className="font-medium">
                     

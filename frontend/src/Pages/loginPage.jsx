@@ -51,16 +51,20 @@ function LoginPage() {
 
     return (
         <div className="flex min-h-screen">
-            {/* Left side with background and text */}
-            <div className="hidden w-full bg-gray-400 lg:flex lg:flex-col lg:justify-between lg:p-12">
-                <div className="flex-1"></div>
-                <div className="px-8 py-6">
-                    <h2 className="text-3xl font-bold text-gray-900">Lorem ipsum dolor sit amet consectetur.</h2>
-                    <p className="mt-2 text-gray-900">
-                        Lorem ipsum dolor sit amet consectetur. Pretium feugiat eget in eu ipsum interdum.
-                    </p>
+            {/* Left side with image and text */}
+            <div className="hidden w-full lg:flex lg:flex-col lg:relative">
+                {/* Text overlay */}
+                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col justify-start p-12 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
+                <h2 className="text-3xl font-bold text-white mb-3">Grow Better with Smart Farming</h2>
+                <p className="text-white/90 max-w-md">
+                    Access real-time soil data, weather insights, and personalized crop recommendations to maximize your harvest
+                    potential.
+                </p>
                 </div>
-            </div>
+
+            {/* Image */}
+            <img src="/images/login.jpg" className="object-cover h-full w-full" />
+        </div>
 
             {/* Right side with form */}
             <div className="flex w-full flex-col items-center justify-center px-4 py-12 sm:px-6 lg:w-1/2">
@@ -69,7 +73,7 @@ function LoginPage() {
                     <div className="flex justify-center">
                             <div className="flex h-12 w-12 items-center justify-center bg-gray-200">
                                 <Link to="/">
-                                <span className="text-xs font-medium text-gray-600">LOGO</span>
+                                <span className="text-xs font-medium text-gray-600">AgriApp</span>
                                 </Link>
                             </div>
                     </div>

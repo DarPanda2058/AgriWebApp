@@ -7,6 +7,7 @@ import Navbar from "../Components/navBar"
 import apiClient from "../Utils/apiClient"
 import getBaseURL from "../Utils/apiConfig"
 import { Link } from "react-router-dom"
+import Footer from "../Components/footer"
 
 // Fetch soil data from API
 const fetchSoilData = async () => {
@@ -442,6 +443,7 @@ function SoilDetailsPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

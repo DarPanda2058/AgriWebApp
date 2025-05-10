@@ -184,7 +184,7 @@ function LandSelectionPage() {
       const deleteResponse = await apiClient.post(getBaseURL() + "/land/delete", {
         plot_id: localStorage.getItem("plotId"),
       })
-      setErrorMessage(error.response?.data?.error || "An unexpected error occurred")
+      setErrorMessage(error.response?.data?.error || "The data for this location hasn't been registered yet. Sorry for the inconvenience.")
 
     } finally {
       // Set loading state to false after API calls complete

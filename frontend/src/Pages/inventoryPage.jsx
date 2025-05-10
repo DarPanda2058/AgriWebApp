@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Plus, Loader2, Pencil, Trash2, AlertTriangle } from "lucide-react"
+import { X, Plus, Loader2, Pencil, Trash2, AlertTriangle, ShoppingCart } from "lucide-react"
 import Navbar from "../Components/navBar"
 import Sidebar from "../Components/sideBar"
 import apiClient from "../Utils/apiClient"
@@ -26,6 +26,9 @@ function InventoryPage() {
   const [formSuccess, setFormSuccess] = useState("")
   const [editMode, setEditMode] = useState(false)
   const [selectedItem, setSelectedItem] = useState(null)
+
+  // E-commerce site URL for buying items
+  const ecommerceBaseUrl = "https://www.daraz.com.np/catalog/?q="
 
   // Form state
   const [newItem, setNewItem] = useState({
@@ -169,6 +172,16 @@ function InventoryPage() {
       setIsDeleting(false)
     }
   }
+  const handleBuyItem = (item) => {
+    // Format the search query - replace spaces with plus signs
+    const searchQuery = item.itemName.replace(/\s+/g, "+")
+
+    // Create the full URL
+    const searchUrl = `${ecommerceBaseUrl}${searchQuery}`
+
+    // Open in a new window/tab
+    window.open(searchUrl, "_blank")
+  }
 
   const openAddModal = () => {
     setEditMode(false)
@@ -307,6 +320,16 @@ function InventoryPage() {
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button
+                              onClick={() => handleBuyItem(item)}
+                              className="text-green-600 hover:text-green-900 mr-4 focus:outline-none"
+                              title="Buy this item online"
+                            >
+                              <span className="flex items-center">
+                                <ShoppingCart className="w-4 h-4 mr-1" />
+                                Buy
+                              </span>
+                            </button>
                             <button
                               onClick={() => openEditModal(item)}
                               className="text-blue-600 hover:text-blue-900 mr-4 focus:outline-none"

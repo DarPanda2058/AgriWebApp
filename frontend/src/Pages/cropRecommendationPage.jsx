@@ -1,4 +1,4 @@
-import axios from "axios"
+
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import {
@@ -14,6 +14,8 @@ import {
   MapPin,
 } from "lucide-react"
 import Navbar from "../Components/navBar"
+import apiClient from "../Utils/apiClient"
+import Footer from "../Components/footer"
 
 function CropRecommendationPage() {
   const [recommendations, setRecommendations] = useState(null)
@@ -31,32 +33,11 @@ function CropRecommendationPage() {
   const fetchCropRecommendations = async (plotId) => {
     try {
       // For a real API, uncomment this:
-      const response = await axios.post("http://localhost:8080/api/crop/recommendation/get", {
+      const response = await apiClient.post("http://localhost:8080/api/crop/recommendation/get", {
         plot_id: plotId 
       })
       return response.data
 
-      // Using mock data for development
-      if (!plotId) {
-        throw new Error("Plot ID is required")
-      }
-
-      // Simulating API response
-      const mockRecommendations = {
-        landPlotId: plotId,
-        cropName1: "coffee",
-        cropName2: "grapes",
-        cropName3: "muskmelon",
-        suitabilityScore1: 27.0,
-        suitabilityScore2: 24.0,
-        suitabilityScore3: 15.0,
-        recommendationDate: "2025-04-16",
-      }
-
-      // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 800))
-
-      return mockRecommendations
     } catch (error) {
       console.error("Error fetching crop recommendations:", error)
       throw error
@@ -67,71 +48,15 @@ function CropRecommendationPage() {
   const fetchCropDetails = async (cropName) => {
     try {
       // For a real API, uncomment this:
-      const response = await axios.post(`http://localhost:8080/api/crop/get`,{
+      const response = await apiClient.post(`http://localhost:8080/api/crop/get`,{
         name: cropName
       })
       console.log("Response data:", response.data)
       return response.data
       
 
-      // Using mock data for development
-      if (!cropName) {
-        throw new Error("Crop name is required")
-      }
-
-      // Database of crop details
-      const cropDatabase = {
-        rice: {
-          crop_name: "rice",
-          plantingSeason: "Summer",
-          growthDuration: "120 days",
-          waterRequirements: "High (requires standing water)",
-          plantingAdvises:
-            "1. Ensure field is flooded for initial weeks.\n2. Transplant seedlings after 20-25 days.\n3. Apply nitrogen fertilizer in 3 split doses.\n4. Weed regularly for the first 40 days.\n5. Harvest when 80% grains turn golden.",
-        },
-        maize: {
-          crop_name: "maize",
-          plantingSeason: "Summer/Winter",
-          growthDuration: "90-100 days",
-          waterRequirements: "Moderate",
-          plantingAdvises:
-            "1. Sow in rows with proper spacing (60x20 cm).\n2. Irrigate weekly during dry spells.\n3. Apply compost before sowing.\n4. Monitor for stem borer pests.\n5. Harvest when cobs are fully mature and husks are dry.",
-        },
-        coffee: {
-          crop_name: "coffee",
-          plantingSeason: "Winter",
-          growthDuration: "3-4 years",
-          waterRequirements: "High (misty/rainy climate)",
-          plantingAdvises:
-            "1. Plant under shade trees.\n2. Irrigate during dry spells.\n3. Prune yearly to maintain shape.\n4. Apply lime to acidic soil.\n5. Handpick red cherries for quality beans.",
-        },
-        grapes: {
-          crop_name: "grapes",
-          plantingSeason: "Spring",
-          growthDuration: "150-180 days",
-          waterRequirements: "Moderate",
-          plantingAdvises:
-            "1. Train vines on trellis wires.\n2. Prune before flowering.\n3. Irrigate every 10-12 days.\n4. Use potassium-rich fertilizer.\n5. Bag clusters to prevent sunburn.",
-        },
-        muskmelon: {
-          crop_name: "muskmelon",
-          plantingSeason: "Summer",
-          growthDuration: "75-90 days",
-          waterRequirements: "Moderate",
-          plantingAdvises:
-            "1. Plant in sandy, well-drained soil.\n2. Maintain row spacing of 2 feet.\n3. Avoid overwatering.\n4. Provide full sunlight.\n5. Harvest when stem cracks near fruit.",
-        },
-      }
-
-      // Check if the crop exists in our database
-      if (!cropDatabase[cropName.toLowerCase()]) {
-        throw new Error(`Crop ${cropName} not found in database`)
-      }
-
-      // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 500))
-
-      return cropDatabase[cropName.toLowerCase()]
+  
+      
     } catch (error) {
       console.error(`Error fetching details for crop ${cropName}:`, error)
       throw error
@@ -615,6 +540,7 @@ function CropRecommendationPage() {
           </>
         )}
       </main>
+      <Footer />
     </div>
   )
 }

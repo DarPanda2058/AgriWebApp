@@ -102,7 +102,7 @@ function ProfilePage() {
                             {/* Profile Header */}
                             <div className="flex items-center space-x-4 mb-8">
                                 <img
-                                    src={"/placeholder.svg"}
+                                    src={"/images/user.png"}
                                     alt="Profile"
                                     className="w-16 h-16 rounded-full"
                                 />
