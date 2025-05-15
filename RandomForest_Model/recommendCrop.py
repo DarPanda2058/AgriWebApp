@@ -6,7 +6,7 @@ import pandas as pd
 
 # Load the model
 try:
-    with open(r"D:\British Course Books\Year 4\Sem 2\Production Project\Software\RandomForest_Model\RF_cropRecommendModel.pkl",'rb') as f:
+    with open(r"RF_cropRecommendModel.pkl",'rb') as f:
         model = pickle.load(f)
 except FileNotFoundError:
     print(json.dumps({"error": "Model file not found"}))

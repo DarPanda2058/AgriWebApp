@@ -5,7 +5,7 @@ import pandas as pd
 
 # Load model (use raw string for Windows paths)
 try:
-    with open(r"D:\British Course Books\Year 4\Sem 2\Production Project\Software\RandomForest_Model\RF_fertilityModel.pkl",'rb') as file:
+    with open(r"RF_fertilityModel.pkl",'rb') as file:
         model = pickle.load(file)
     # Parse input JSON
     input_data = json.loads(sys.argv[1])
