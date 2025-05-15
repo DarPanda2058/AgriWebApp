@@ -3,9 +3,15 @@ package com.example.backend.Utils;
 import com.example.backend.DTO.UserResponseDataDTO;
 import com.example.backend.DTO.UserDetailDTO;
 import com.example.backend.Model.Users;
+import com.example.backend.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class UserDataMapper {
+
+
+
+
     public static UserResponseDataDTO mapToUserDataDTO(Users user){
         UserResponseDataDTO userResponseDataDTO = new UserResponseDataDTO();
 
@@ -25,4 +31,6 @@ public class UserDataMapper {
 
         return userDetailDTO;
     }
+
+
 }

@@ -27,9 +27,14 @@ public class UserDetailService {
     }
 
     public ResponseEntity<Object> updateUserDetail(Users user) {
+        System.out.println(user);
+
         Optional<Users> userTemp = userRepository.findById(Math.toIntExact(user.getUser_id()));
         if(userTemp.isPresent()) {
-            userRepository.save(user);
+            Users users = userTemp.get();
+            users.setFirst_name(user.getFirst_name());
+            users.setLast_name(user.getLast_name());
+            userRepository.save(users);
             return ResponseEntity.ok("User details updated successfully");
         } else {
             return ResponseEntity.status(404).body("User not found");
