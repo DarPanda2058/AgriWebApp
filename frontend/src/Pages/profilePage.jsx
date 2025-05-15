@@ -71,8 +71,9 @@ function ProfilePage() {
                 email: userData.email, 
                 password: data.password,
             });
-            console.log("User data updated:", response.data);
+            
             window.location.reload();
+            console.log("User data updated:", response.data);
             setIsEditing(false);
             alert("Profile updated successfully!");
             } catch (error) {
@@ -173,34 +174,9 @@ function ProfilePage() {
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
                                     <div className="relative">
-                                        {isEditing ? (
-                                            <>
-                                                <input
-                                                    type={showPassword ? "text" : "password"}
-                                                    {...register("password", {
-                                                        required: "Password is required",
-                                                        minLength: {
-                                                            value: 8,
-                                                            message: "Password must be at least 8 characters",
-                                                        },
-                                                    })}
-                                                    className={`w-full p-3 border ${
-                                                        errors.password ? "border-red-500" : "border-gray-300"
-                                                    } rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500`}
-                                                />
-                                                <button
-                                                    type="button"
-                                                    onClick={togglePasswordVisibility}
-                                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                                                >
-                                                    {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-                                                </button>
-                                            </>
-                                        ) : (
                                             <div className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-gray-700">
                                                 ••••••••
                                             </div>
-                                        )}
                                         {errors.password && <p className="mt-1 text-xs text-red-500">{errors.password.message}</p>}
                                     </div>
                                 </div>

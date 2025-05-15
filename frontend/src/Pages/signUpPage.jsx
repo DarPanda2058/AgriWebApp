@@ -38,7 +38,7 @@ export default function SignupPage() {
   }
 
   // Watch the password field for confirmation validation
-  const password = watch("password")
+  const password = watch("password") 
 
   return (
     <div className="flex min-h-screen">

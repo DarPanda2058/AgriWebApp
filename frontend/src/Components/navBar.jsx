@@ -15,7 +15,7 @@ function Navbar() {
     window.location.href = "/login"; // Redirect to login page after logout
   }
 
-  const isAuthenticated = localStorage.getItem("token"); // Replace with actual authentication logic
+  const isAuthenticated = localStorage.getItem("token"); 
 
   return (
     <nav className="relative bg-white shadow-sm">
