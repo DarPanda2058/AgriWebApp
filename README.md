@@ -1,83 +1,62 @@
-🌱 AgriWebApp – Smart Farming Assistant
-AgriWebApp is an intelligent web application designed to assist farmers in optimizing their farming practices using real-time soil analysis, weather data, and crop recommendation powered by machine learning. The platform allows farmers to manage their land, monitor fertility, receive tailored crop suggestions, and track inventory—all from a user-friendly dashboard.
+# 🌱 AgriWebApp – Smart Farming Assistant
 
-🚀 Features
-🌍 Land Selection via Map Interface
-Farmers can select and register plots using an interactive map (Leaflet.js).
+**AgriWebApp** is an intelligent web application designed to assist farmers in optimizing their farming practices using real-time soil analysis, weather data, and crop recommendations powered by machine learning. The platform allows farmers to manage their land, monitor fertility, receive tailored crop suggestions, and track inventory—all from a user-friendly dashboard.
 
-🧪 Soil Fertility Prediction
-Automatically fetches soil nutrient data using external APIs and predicts fertility using a trained ML model.
+---
 
-☀️ Weather Forecast Integration
-Provides daily weather data and hourly soil moisture using Open-Meteo API.
+## 🚀 Features
 
-🌾 AI-Powered Crop Recommendation
-Suggests top 3 crops for the land based on soil and weather using Random Forest model.
+### 🌍 Land Selection via Map Interface
+Farmers can select and register plots using an interactive map powered by **Leaflet.js**.
 
-📦 Inventory Management
-Allows users to add, edit, and delete inventory items related to farming (seeds, fertilizers, etc.).
+### 🧪 Soil Fertility Prediction
+Automatically fetches soil nutrient data using external APIs and predicts fertility using a trained **ML model**.
 
-🔐 JWT-based Authentication
-Secured login system with token generation and protected backend routes.
+### ☀️ Weather Forecast Integration
+Provides daily weather data and hourly soil moisture using **Open-Meteo API**.
 
-📊 Soil and Weather Visualization
-Data is shown with graphs and summaries to help farmers make informed decisions.
+### 🌾 AI-Powered Crop Recommendation
+Suggests top 3 crops for the land based on soil and weather using **Random Forest model**.
 
-🛠️ Tech Stack
-Backend
-Spring Boot (Java)
+### 📦 Inventory Management
+Add, edit, and delete inventory items related to farming (seeds, fertilizers, etc.).
 
-Microsoft SQL Server
+### 🔐 JWT-based Authentication
+Secured login system with **token generation** and protected backend routes.
 
-Spring Security + JWT for authentication
+### 📊 Soil and Weather Visualization
+Data is shown with **charts and summaries** to help farmers make informed decisions.
 
-REST APIs to handle land, soil, weather, crop, and inventory
+---
 
-Python (ML) for crop recommendation and fertility prediction
+## 🛠️ Tech Stack
 
-Frontend
-React.js
+### 🔙 Backend
+- **Spring Boot (Java)**
+- **Microsoft SQL Server**
+- **Spring Security + JWT** for authentication
+- REST APIs to handle land, soil, weather, crop, and inventory
+- **Python (ML)** for crop recommendation and fertility prediction
 
-Tailwind CSS for UI styling
+### 🔜 Frontend
+- **React.js**
+- **Tailwind CSS** for UI styling
+- **Axios** for API communication
+- **Leaflet.js** for interactive map
 
-Axios for API communication
+---
 
-Leaflet.js for map interface
+## 🧪 APIs Used
 
-🧪 APIs Used
-[🌾 NARC Soil API (Nepal)] – for soil data
+- [🌾 NARC Soil API (Nepal)] – for real-time soil data  
+- ☁️ **Open-Meteo API** – for weather and soil moisture forecast
 
-☁️ Open-Meteo API – for weather and soil moisture forecast
+---
+## 💡 Future Enhancements
+### 📊 Admin dashboard for crop and user management
 
-📦 Installation Guide
-Backend (Spring Boot)
-Install Java 17+
+### ⚠️ Real-time weather alerts with notifications
 
-Install Gradle (or use included wrapper)
+### 🛒 Integration with local marketplaces for crop selling
 
-Setup SQL Server and import the database schema
-
-Run: ./gradlew bootRun
-
-Frontend (React)
-Install Node.js and npm
-
-Navigate to frontend/ folder
-
-Run: npm install
-
-Start the app: npm start
-
-🧪 Testing
-Postman used for backend API testing
-
-Chrome DevTools used for frontend interaction testing
-
-💡 Future Enhancements
-Admin dashboard for crop and user management
-
-Real-time weather alerts with notifications
-
-Integration with local marketplaces for crop selling
-
-Multilingual support for local farmers
+### 🌐 Multilingual support for local farmers
